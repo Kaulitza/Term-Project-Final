@@ -1,0 +1,22 @@
+﻿body {
+    background-image: url(../Images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Indie Flower', cursive;
+    font-size:1.2em;
+}
+
+h1{
+    font-family:'Permanent Marker';
+    color:goldenrod;
+    text-shadow: 1px 1px black;
+}
+
+h2{
+    color:navajowhite;
+}
+
+nav-item{
+    font-size:smaller;
+}
