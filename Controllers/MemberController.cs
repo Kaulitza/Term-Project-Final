@@ -95,6 +95,8 @@ namespace Term_Project_Version_1.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator,Manager")]
+
         public async Task<IActionResult> Create([Bind("ID,name,email")] Members members)
         {
             if (ModelState.IsValid)
@@ -107,6 +109,8 @@ namespace Term_Project_Version_1.Controllers
         }
 
         // GET: Member/Edit/5
+        [Authorize(Roles = "Administrator,Manager")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -159,6 +163,8 @@ namespace Term_Project_Version_1.Controllers
         }
 
         // GET: Member/Delete/5
+        [Authorize(Roles = "Administrator,Manager")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
