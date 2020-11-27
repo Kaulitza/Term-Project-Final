@@ -71,6 +71,8 @@ namespace Term_Project_Version_1.Controllers
         }
 
         // GET: Purchase/Edit/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -92,6 +94,8 @@ namespace Term_Project_Version_1.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Edit(string id, [Bind("ID,Price,MembersID")] Purchases purchases)
         {
             if (id != purchases.ID)
@@ -124,6 +128,8 @@ namespace Term_Project_Version_1.Controllers
         }
 
         // GET: Purchase/Delete/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -145,6 +151,8 @@ namespace Term_Project_Version_1.Controllers
         // POST: Purchase/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
             var purchases = await _context.Purchases.FindAsync(id);
